@@ -1,0 +1,211 @@
+:root{
+    font-family: Avenir, Helvetica, Arial, sans-serif !important;
+    font-size: 16px !important;
+    --text-primary:#b6b6b6 !important;
+    --text-secondary: #ececec !important;
+    --bg-dark: #2d2d3b !important;
+    --bg-primary: #23232e !important;
+    --bg-secondary: #141418 !important;
+    --transition-speed:600ms !important;
+}
+
+body{
+    color: var(--text-primary) !important;
+    background-color: var(--bg-dark) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    transition: var(--transition-speed);
+}
+
+hr{
+    color: #000 !important;
+}
+
+body::-webkit-scrollbar{
+    width: 0.25rem !important;
+}
+
+body::-webkit-scrollbar-track{
+    background: #1e1e24 !important;
+}
+
+body::-webkit-scrollbar-thumb{
+    background: #6649b8 !important;
+}
+
+main{
+    margin-left: 5rem !important;
+    padding: 1rem !important;
+}
+
+.link-text{
+    display: none !important;
+}
+
+.navbar{
+    padding:0px !important;
+    position: fixed !important;
+    background-color: var(--bg-primary) !important;
+    transition: 200ms ease !important;
+    overflow-x: hidden !important;
+    z-index: 9999;
+}
+
+.navbar-nav{
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    height: 100% !important;
+}
+
+.nav-item{
+    width: 100% !important;
+}
+
+.nav-item:last-child{
+    margin-top: auto !important;
+}
+
+.nav-link{
+    display: flex !important;
+    align-items: center !important;
+    height: 5rem !important;
+    color: var(--text-primary) !important;
+    text-decoration: none !important;
+    text-align: center !important;
+    filter: grayscale(100%) opacity(.7) !important;
+    transition: var(--transition-speed) !important;
+}
+
+.nav-link:hover{
+    filter: grayscale(0%) opacity(1) !important;
+    background: var(--bg-secondary) !important;
+    color: var(--text-secondary) !important;
+}
+
+.nav-link svg{
+    font-size: 2rem !important;
+    min-width: 40px !important;
+    margin: 0 1.5rem !important;
+    color: #6649b8 !important;
+}
+
+.logo{
+    background: var(--bg-secondary) !important;
+    font-weight: bold !important;
+    text-transform: uppercase !important;
+    margin-bottom: 1rem !important;
+    text-align: center !important;
+    font-size: 1.5rem !important;
+    letter-spacing: 0.3ch !important;
+    width: 100% !important;
+}
+
+.logo svg{
+    transform: rotate(0deg) !important;
+    transition: transform var(--transition-speed) !important;
+}
+
+@media only screen and (max-width: 600px){
+    .navbar{
+        bottom: 0 !important;
+        width: 100vw !important;
+        height: 5rem !important;
+    }
+
+    .logo{
+        display: none !important;
+    }
+
+    .navbar-nav{
+        flex-direction: row !important;
+    }
+
+    .nav-link{
+        justify-content: center !important;
+    }
+
+    main{
+        margin: 0 !important;
+    }
+}
+
+@media only screen and (min-width: 600px){
+    .navbar{
+        top: 0 !important;
+        width: 5rem !important;
+        height: 100vh !important;
+    }
+
+    .navbar:hover{
+        width: 16rem !important;
+    }
+    
+    .navbar:hover .link-text{
+        display: block !important;
+        transition: opacity var(--transition-speed) !important;
+    }
+
+    .navbar:hover .logo svg{
+        transform: rotate(180deg) !important;
+    }
+}
+
+.bg-primary-2{
+    background-color: var(--bg-primary) !important;
+}
+
+.bg-secondary{
+    background-color: var(--bg-secondary) !important;
+}
+
+a{
+    color: #6649b8 !important;
+}
+
+.btn-primary, .form-check-input:checked{
+    background-color: #6649b8 !important;
+    background: #6649b8 !important;
+    border-color: #6649b8 !important;
+    transition: var(--transition-speed) !important;
+}
+
+.form-check-input:checked[type=checkbox]{
+    background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 20 20%27%3e%3cpath fill=%27none%27 stroke=%27%23fff%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27 stroke-width=%273%27 d=%27m6 10 3 3 6-6%27/%3e%3c/svg%3e") !important;
+}
+
+.btn-primary:hover{
+    filter: brightness(.7);
+}
+
+.btn-primary:active{
+    filter: brightness(.5);
+}
+
+.border-left{
+    border-radius: 0;
+    border-left: var(--bs-card-border-color) 1px solid;
+}
+.border-right{
+    border-radius: 0;
+    border-right: var(--bs-card-border-color) 1px solid;
+}
+
+.campaign-card-button{
+    color: var(--text-primary) !important;
+    text-decoration: none;
+}
+
+.campaign-card-button:hover{
+    opacity: .7;
+}
+
+.campaign-card{
+    transition: var(--transition-speed) !important;
+}
+.campaign-card:hover{
+    transform: scale(1.02);
+}
