@@ -6,7 +6,7 @@
                     <h4>{{ title }}</h4>
                 </div>
                 <div class="col" style="text-align:right;">
-                    <a href="#" class="btn btn-primary btn-block text-white">Create Campaign</a>
+                    <a href="#" class="btn btn-primary btn-block text-white"><b>Create Campaign</b></a>
                 </div>
             </div>
         </div>
