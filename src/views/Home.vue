@@ -8,11 +8,15 @@
 <script>
 import Navbar from '@/components/Navbar.vue'
 import MainContent from '@/components/Main.vue'
+import {authUser} from '@/utils'
 
 export default {
   name: 'Home',
   components: {
     Navbar,MainContent
+  },
+  beforeMount(){
+      authUser()
   }
 }
 </script>

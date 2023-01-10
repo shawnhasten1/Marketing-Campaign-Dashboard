@@ -7,15 +7,15 @@
             <h1>Campaign Dashboard</h1>
         </div>
         <div class="col-12 mt-4" style="display:flex; justify-content:center;">
-            <form action="/" class="card p-4 col-lg-6 bg-primary-2">
+            <form class="card p-4 col-lg-6 bg-primary-2">
                 <!-- Email input -->
-                <div class="form-outline mb-4">
-                    <input type="email" id="form2Example1" class="form-control" />
+                <div class="form-outline mb-4 mt-4">
+                    <input type="email" id="form2Example1" class="form-control" v-model="username"/>
                     <label class="form-label" for="form2Example1">Email address</label>
                 </div>
                 <!-- Password input -->
                 <div class="form-outline mb-4">
-                    <input type="password" id="form2Example2" class="form-control" />
+                    <input type="password" id="form2Example2" class="form-control" v-model="password"/>
                     <label class="form-label" for="form2Example2">Password</label>
                 </div>
                 <!-- 2 column grid layout for inline styling -->
@@ -33,7 +33,7 @@
                     </div>
                 </div>
                 <!-- Submit button -->
-                <input type="submit" value="Sign in" class="btn btn-primary btn-block mb-4">
+                <a href="#" class="btn btn-primary btn-block mb-4" @click="authenticate()">Sign in</a>
                 <!-- Register buttons -->
                 <div class="text-center">
                     <p>Not a member? <a href="#!">Register</a></p>
@@ -42,3 +42,35 @@
         </div>
     </div>
 </template>
+
+<script>
+import {authUser} from '@/utils'
+import axios from 'axios'
+export default {
+    name: 'Login',
+    data(){
+        return{
+            username:null,
+            password:null,
+        }
+    },
+    methods:{
+        authenticate: function(){
+            axios.post('http://localhost:5000/login', {
+                "username":this.username,
+                "password":this.password
+            }).then(response => {
+                console.log(response.token);
+                localStorage.Authorization = response.data['token'];
+                authUser();
+            })
+            .catch((error) => {
+                console.log(error);
+            })
+        }
+    },
+    beforeMount(){
+        authUser()
+    }
+}
+</script>

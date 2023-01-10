@@ -33,7 +33,7 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/login" class="nav-link">
+          <router-link to="/logout" class="nav-link">
             <font-awesome-icon icon="fa-solid fa-right-from-bracket" />
             <span class="link-text">Log Out</span>
           </router-link>

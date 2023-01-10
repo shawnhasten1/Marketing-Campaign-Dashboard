@@ -199,6 +199,10 @@ a{
     color: #6649b8 !important;
 }
 
+a.btn{
+    color: white !important;
+}
+
 .btn-primary, .form-check-input:checked{
     background-color: #6649b8 !important;
     background: #6649b8 !important;
