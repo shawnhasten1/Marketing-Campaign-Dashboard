@@ -1,13 +1,13 @@
 <template>
   <div id="home">
     <Navbar />
-    <MainContent title="Campaigns"/>
+    <MainContent title="Campaigns" />
   </div>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import MainContent from '@/components/Main.vue'
+import MainContent from '@/components/CampaignMain.vue'
 import {authUser} from '@/utils'
 
 export default {

@@ -80,6 +80,10 @@ main{
     transition: var(--transition-speed) !important;
 }
 
+.nav-link.active{
+    filter: grayscale(0%) opacity(1) !important;
+}
+
 .nav-link:hover{
     filter: grayscale(0%) opacity(1) !important;
     background: var(--bg-secondary) !important;
@@ -140,6 +144,9 @@ main{
     .login-card{
         width: 90%;
     }
+    .campaign-row{
+        justify-content: center;
+    }
 }
 
 @media only screen and (min-width: 500px){
@@ -181,6 +188,9 @@ main{
 @media only screen and (min-width: 942px){
     .col-lg-2-5{
         width: 33% !important;
+    }
+    .campaign-row{
+        justify-content: start;
     }
 }
 
@@ -258,4 +268,26 @@ a.btn{
 }
 .campaign-card:hover{
     transform: scale(1.02);
+}
+
+
+.custom-modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0,0,0,0.5);
+    z-index:10000;
+}
+.custom-modal-dialog{
+    position:fixed;
+    top:20%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    width:50vw;
+    height:auto;
+    background-color: var(--bg-dark);
+    z-index:10001;
+    border-radius: .5rem;
 }

@@ -9,24 +9,24 @@
           </router-link>
         </li>
         <li class="nav-item">
-          <router-link to="/" class="nav-link">
+          <router-link to="/" class="nav-link" :class="{active:path_name=='/'}">
             <font-awesome-icon icon="fa-solid fa-home" />
             <span class="link-text">Campaigns</span>
           </router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" :class="{active:path_name=='/contacts'}">
           <router-link to="/" class="nav-link">
             <font-awesome-icon icon="fa-solid fa-users" />
             <span class="link-text">Contacts</span>
           </router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" :class="{active:path_name=='/account'}">
           <router-link to="/" class="nav-link">
             <font-awesome-icon icon="fa-solid fa-person" />
             <span class="link-text">Account</span>
           </router-link>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" :class="{active:path_name=='/settings'}">
           <router-link to="/" class="nav-link">
             <font-awesome-icon icon="fa-solid fa-gear" />
             <span class="link-text">Settings</span>
@@ -45,7 +45,18 @@
   <!--VueJS Script for Navbar sidebar that is collapsible using bootstrap-->
   <script>
   export default {
-    name: 'Navbar'
+    name: 'Navbar',
+    data: function(){
+      return {
+        path_name: this.$route.path
+      }
+    },
+    computed:{
+      setNavActive: function(){
+        console.log(this);
+        return true;
+      }
+    }
   }
   </script>
   
