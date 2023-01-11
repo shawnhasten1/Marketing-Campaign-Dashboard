@@ -135,6 +135,15 @@ main{
 
 @media only screen and (min-width: 0px){
     .col-lg-2-5{
+        width: 100% !important;
+    }
+    .login-card{
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 500px){
+    .col-lg-2-5{
         width: 80% !important;
     }
 }
@@ -229,6 +238,10 @@ a.btn{
 .border-right{
     border-radius: 0;
     border-right: var(--bs-card-border-color) 1px solid;
+}
+.border-bottoms{
+    border-radius: 0;
+    border-bottom: var(--bs-card-border-color) 1px solid !important;
 }
 
 .campaign-card-button{
