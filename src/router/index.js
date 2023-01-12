@@ -1,8 +1,11 @@
 import { createWebHistory, createRouter } from "vue-router"
-import Home from "@/views/Home.vue"
 import Login from "@/views/Login.vue"
 import Register from "@/views/Register.vue"
 import Logout from "@/views/Logout.vue"
+
+import Home from "@/views/Home.vue"
+import Campaign from "@/views/Campaign.vue"
+
 import PageNotFound from '@/views/PageNotFound.vue'
 
 const routes = [
@@ -25,6 +28,11 @@ const routes = [
       path: "/logout",
       name: "Logout",
       component: Logout,
+    },
+    {
+        path: '/campaigns/:catchAll(.*)*',
+        name: "Campaign",
+        component: Campaign,
     },
     {
         path: '/:catchAll(.*)*',

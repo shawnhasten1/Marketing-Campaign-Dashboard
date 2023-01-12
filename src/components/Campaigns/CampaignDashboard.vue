@@ -14,20 +14,20 @@
         <div class="row campaign-row">
             <CampaignCard v-for="campaign in campaigns" :key="campaign" :campaign="campaign" @loadCamps="loadCampaigns()"/>
         </div>
-        <Modal :show="show" @closeModal="show=false;" @loadCamps="loadCampaigns()"/>
+        <CampaignModal :show="show" @closeModal="show=false;" @loadCamps="loadCampaigns()"/>
     </main>
 </template>
 
 <script>
 import axios from 'axios';
 
-import Modal from '@/components/Modal.vue'
-import CampaignCard from '@/components/CampaignCard.vue'
+import CampaignModal from '@/components/Campaigns/CampaignModal.vue'
+import CampaignCard from '@/components/Campaigns/CampaignCard.vue'
 
 export default {
     name: 'MainContent',
     components:{
-        CampaignCard,Modal
+        CampaignCard,CampaignModal
     },
     props: {
         title:String

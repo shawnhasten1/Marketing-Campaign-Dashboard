@@ -7,6 +7,8 @@
     --bg-primary: #23232e !important;
     --bg-secondary: #141418 !important;
     --transition-speed:600ms !important;
+
+    --bg-purple: #6649b8 !important;
 }
 
 body{
@@ -30,7 +32,7 @@ body::-webkit-scrollbar-track{
 }
 
 body::-webkit-scrollbar-thumb{
-    background: #6649b8 !important;
+    background: var(--bg-purple) !important;
 }
 
 main{
@@ -94,7 +96,20 @@ main{
     font-size: 2rem !important;
     min-width: 40px !important;
     margin: 0 1.5rem !important;
-    color: #6649b8 !important;
+    color: var(--bg-purple) !important;
+}
+
+.nested-nav{
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    background-color: var(--bg-secondary) !important;
+}
+
+.nested-nav .nav-link{
+    padding-left: 1rem;
 }
 
 .logo{
@@ -162,6 +177,14 @@ main{
         height: 100vh !important;
     }
 
+    .nav-item .nested-nav {
+        border-top: 1px solid var(--bg-primary) !important;
+        display: flex;
+        max-height: 0px;
+        overflow: hidden;
+        transition: var(--transition-speed) ease;
+    }
+
     .navbar:hover{
         width: 16rem !important;
     }
@@ -170,10 +193,15 @@ main{
         display: block !important;
         transition: opacity var(--transition-speed) !important;
     }
+    
+    .navbar:hover .nested-nav{
+        max-height: 1000px !important;
+    }
 
     .navbar:hover .logo svg{
         transform: rotate(180deg) !important;
     }
+
     .col-lg-2-5{
         width: 60% !important;
     }
@@ -215,7 +243,7 @@ main{
 }
 
 a{
-    color: #6649b8 !important;
+    color: var(--bg-purple) !important;
 }
 
 a.btn{
@@ -223,9 +251,9 @@ a.btn{
 }
 
 .btn-primary, .form-check-input:checked{
-    background-color: #6649b8 !important;
-    background: #6649b8 !important;
-    border-color: #6649b8 !important;
+    background-color: var(--bg-purple) !important;
+    background: var(--bg-purple) !important;
+    border-color: var(--bg-purple) !important;
     transition: var(--transition-speed) !important;
 }
 
@@ -251,7 +279,11 @@ a.btn{
 }
 .border-bottoms{
     border-radius: 0;
-    border-bottom: var(--bs-card-border-color) 1px solid !important;
+    border-bottom: var(--bg-secondary) 1px solid !important;
+    border-color: var(--bg-secondary) !important;
+}
+.border-color{
+    border-color: var(--bg-secondary) !important;
 }
 
 .campaign-card-button{
@@ -269,7 +301,6 @@ a.btn{
 .campaign-card:hover{
     transform: scale(1.02);
 }
-
 
 .custom-modal{
     position:fixed;
@@ -290,4 +321,51 @@ a.btn{
     background-color: var(--bg-dark);
     z-index:10001;
     border-radius: .5rem;
+}
+
+.tab {
+    display: inline-block;
+    padding: 10px 20px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border: #fff 1px solid;
+    border-bottom: none;
+    margin: 0 10px;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 1.2rem;
+    border-color: var(--bg-secondary);
+    text-align: center;
+    transition: var(--transition-speed);
+}
+.tab:hover{
+    background-color: var(--bg-purple);
+}
+
+.tab.active{
+    background-color: var(--bg-purple);
+}
+
+.tab.active:hover{
+    opacity: .8;
+}
+
+table{
+    border-collapse: separate !important;
+    text-align: center;
+    color: white !important;
+}
+
+thead{
+    background-color: var(--bg-purple);
+    height: 50px;
+    vertical-align: middle;
+    border-collapse: separate !important;
+    border-radius: 5px !important;
+    overflow: hidden;
+}
+
+/* Change background of even rows in tbody */
+tbody tr:nth-child(even) {
+    background-color: var(--bg-secondary);
 }

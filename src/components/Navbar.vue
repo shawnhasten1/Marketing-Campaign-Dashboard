@@ -19,6 +19,13 @@
             <font-awesome-icon icon="fa-solid fa-users" />
             <span class="link-text">Contacts</span>
           </router-link>
+          <ul class="nested-nav">
+            <li class="nav-item">
+              <router-link to="/" class="nav-link" :class="{active:path_name=='/'}">
+                <span class="link-text">Campaigns</span>
+              </router-link>
+            </li>
+          </ul>
         </li>
         <li class="nav-item" :class="{active:path_name=='/account'}">
           <router-link to="/" class="nav-link">

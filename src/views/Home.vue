@@ -7,7 +7,7 @@
 
 <script>
 import Navbar from '@/components/Navbar.vue'
-import MainContent from '@/components/CampaignMain.vue'
+import MainContent from '@/components/Campaigns/CampaignDashboard.vue'
 import {authUser} from '@/utils'
 
 export default {
