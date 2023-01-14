@@ -6,7 +6,7 @@
                     <h4>{{ title }}</h4>
                 </div>
                 <div class="col" style="text-align:right;">
-                    <a href="#" class="btn btn-primary btn-block text-white" @click="modal('journey-modal', 'show')"><b>Create Journey</b></a>
+                    <a href="#" class="btn btn-primary btn-block text-white" @click="show=true"><b>Create Journey</b></a>
                 </div>
             </div>
         </div>
@@ -17,21 +17,19 @@
                 <JourneysTable :journey="loadJourneysFlag"/>
             </div>
         </div>
-        <ModalTest/>
+        <JourneyModal :show="show" @closeModal="show=false; loadJourneysFlag++;" @loadJourneys="loadJourneysFlag++"/>
     </main>
 </template>
 
 <script>
 import CampaignNav from './CampaignNav.vue';
 import JourneysTable from './JourneysTable.vue';
-import ModalTest from './ModalTest.vue';
-
-import { modalController } from '@/utils';
+import JourneyModal from './JourneyModal.vue';
 
 export default {
     name: 'MainCampaign',
     components:{
-        CampaignNav,JourneysTable,ModalTest
+        CampaignNav,JourneysTable,JourneyModal
     },
     props: {
         title:String
@@ -40,12 +38,6 @@ export default {
         return {
             show:false,
             loadJourneysFlag:0
-        }
-    },
-    methods:{
-        modal:modalController,
-        loadJourneys(){
-            this.loadJourneysFlag = this.loadJourneysFlag + 1;
         }
     }
 }

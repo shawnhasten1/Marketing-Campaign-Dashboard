@@ -86,6 +86,12 @@ main{
     filter: grayscale(0%) opacity(1) !important;
 }
 
+.nav-link.active-override{
+    filter: grayscale(0%) opacity(1) !important;
+    background: var(--bg-secondary) !important;
+    color: var(--text-secondary) !important;
+}
+
 .nav-link:hover{
     filter: grayscale(0%) opacity(1) !important;
     background: var(--bg-secondary) !important;
@@ -178,11 +184,10 @@ main{
     }
 
     .nav-item .nested-nav {
-        border-top: 1px solid var(--bg-primary) !important;
         display: flex;
         max-height: 0px;
         overflow: hidden;
-        transition: var(--transition-speed) ease;
+        transition: 300ms !important;
     }
 
     .navbar:hover{
@@ -194,7 +199,7 @@ main{
         transition: opacity var(--transition-speed) !important;
     }
     
-    .navbar:hover .nested-nav{
+    .nested-nav.active{
         max-height: 1000px !important;
     }
 
@@ -368,4 +373,8 @@ thead{
 /* Change background of even rows in tbody */
 tbody tr:nth-child(even) {
     background-color: var(--bg-secondary);
+}
+
+.text-right{
+    text-align: right !important;
 }

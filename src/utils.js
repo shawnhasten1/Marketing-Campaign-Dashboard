@@ -22,3 +22,16 @@ export function authUser(){
         }
     })
 }
+
+export function modalController(target, action){
+    console.log(target);
+    console.log(action);
+    var style_change = 'none';
+    if(action == 'dismiss'){
+        style_change = 'none';
+    }
+    else{
+        style_change = 'block';
+    }
+    document.getElementById(target).style.display = style_change;
+}
